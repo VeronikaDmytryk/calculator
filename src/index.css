@@ -1,0 +1,79 @@
+body{
+  background: #212121;
+  font-family: "Segoe UI", sans-serif;
+  height: 100%;
+}
+
+.calcBody {
+  background: -webkit-radial-gradient(#dedede, #9f9f9f);
+  background: -o-radial-gradient(#dedede, #9f9f9f);
+  background: -moz-radial-gradient(#dedede, #9f9f9f);
+  width: 320px;
+  margin: 10vh auto 0 auto;
+  font-size: 30px;
+  color: #fff;
+  padding: 2%;
+}
+
+.calcButtonsAreaStyle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
+
+.calcButtonStyle {
+  margin-bottom: 15px;
+  text-align: center;
+  width: 30px;
+  background: rgba(255,255,255, 0.5);
+  font-size: 18px;
+  color: #212121;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.calcButtonStyle:active{
+  background: rgba(255,255,255, 0.35);
+}
+
+
+.calcScreenStyle {
+  width: 100%;
+  text-align: right;
+  margin: 15px auto 25px auto;
+  font-size: 35px;
+  color: #000;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.equationFieldStyle {
+  float: right;
+  text-align: right;
+  font-size: 15px;
+  height: 20px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.currentFieldStyle {
+  clear: both; 
+  display: block; 
+  position: relative;
+  height: 40px;
+  float: right;
+}
+
+.credits{
+  color: rgba(255,255,255, 0.5);
+  text-align: center;
+  font-size: 11px;
+  position: absolute;
+  bottom: 3vh;
+  left:0;
+  right:0;
+  margin: 0 auto;
+}
