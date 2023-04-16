@@ -10,7 +10,7 @@ export default class CalculatorButtonsArea extends React.Component {
     super();
     this.state = {
       currentValue: props.currentValue,
-      operator: "",
+      operator: null,
       firstNumber: null,
       secondNumber: null,
       currentEquation: props.equation,
@@ -38,7 +38,6 @@ export default class CalculatorButtonsArea extends React.Component {
   onButtonClick = (e) => {
     let buttonValue = e.target.innerText;
     let isNumbersOrOperator = this.functions.checkTypeOfButtonClicked(buttonValue); // Returns type of the clicked button (number, operator, other)
-
     switch (isNumbersOrOperator) {
       case "number":
         this.functions.numberClicked(this, buttonValue);

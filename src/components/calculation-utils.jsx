@@ -38,7 +38,7 @@ export default class CalculationUtils extends React.Component {
     // Setting current value as a first or second number
     setCurrentValueFirstOrSecond(component) {
         var currentValue = component.state.currentValue;
-        if (!component.state.firstNumber) {
+        if (component.state.firstNumber == null) {
             component.setState({ firstNumber: currentValue });
         } else {
             component.setState({ secondNumber: currentValue }, () => {
@@ -115,11 +115,12 @@ export default class CalculationUtils extends React.Component {
     }
 
     calculate = (component) => {
-        if (component.state.firstNumber && component.state.secondNumber) {
+        if (component.state.firstNumber != null && component.state.secondNumber != null) {
             let first = parseFloat(component.state.firstNumber);
             let second = parseFloat(component.state.secondNumber);
             let operator = component.state.operator;
             let result;
+
             switch (operator) {
                 case "−":
                     result = (first - second);
@@ -140,6 +141,8 @@ export default class CalculationUtils extends React.Component {
                 default:
                     break;
             }
+        } else {
+            console.error("Skipping calculation. Left: " + component.state.firstNumber + " Right: " + component.state.secondNumber);
         }
     }
 
@@ -228,6 +231,7 @@ export default class CalculationUtils extends React.Component {
                     } else if (component.state.currentValue.indexOf("-") === -1) {
                         newCurValue = "-".concat(initialValue);
                     }
+					
                     if (this.firstNumberEqualsCurrentValue(component, initialValue)) {
                         component.setState({ currentValue: newCurValue, firstNumber: newCurValue }, component.changeCurrentValue);
                     } else {
